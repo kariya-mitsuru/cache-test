@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - master
+  schedule:
+    - cron: '0 0 * * * '
+  repository_dispatch:
+    types:
+      - test
+
 
 jobs:
   # Build and unit test
