@@ -44,9 +44,7 @@ async function run(): Promise<void> {
             return;
         }
         core.debug(`Cache ID: ${cacheId}`);
-        const cachePath = utils.resolvePath(
-            core.getInput(Inputs.Path, { required: true })
-        );
+        const cachePath = 'cache-path';
         core.debug(`Cache Path: ${cachePath}`);
 
         const archivePath = path.join(

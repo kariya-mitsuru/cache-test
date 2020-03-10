@@ -2788,7 +2788,7 @@ function run() {
                 return;
             }
             core.debug(`Cache ID: ${cacheId}`);
-            const cachePath = utils.resolvePath(core.getInput(constants_1.Inputs.Path, { required: true }));
+            const cachePath = 'cache-path';
             core.debug(`Cache Path: ${cachePath}`);
             const archivePath = path.join(yield utils.createTempDirectory(), "cache.tgz");
             core.debug(`Archive Path: ${archivePath}`);
