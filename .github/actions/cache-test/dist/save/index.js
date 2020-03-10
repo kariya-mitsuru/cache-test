@@ -1338,6 +1338,16 @@ function getCacheEntry(keys) {
     });
 }
 exports.getCacheEntry = getCacheEntry;
+function getCacheList() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const httpClient = createHttpClient();
+        const resource = `caches`;
+        const response = yield httpClient.getJson(getCacheApiUrl(resource));
+        core.debug(JSON.stringify(response));
+        return response;
+    });
+}
+exports.getCacheList = getCacheList;
 function pipeResponseToStream(response, stream) {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise(resolve => {

@@ -106,6 +106,18 @@ export async function getCacheEntry(
     return cacheResult;
 }
 
+export async function getCacheList(): Promise<any | null> {
+    const httpClient = createHttpClient();
+    const resource = `caches`;
+
+    const response = await httpClient.getJson<any>(
+        getCacheApiUrl(resource)
+    );
+    core.debug(JSON.stringify(response));
+
+    return response;
+}
+
 async function pipeResponseToStream(
     response: IHttpClientResponse,
     stream: NodeJS.WritableStream
