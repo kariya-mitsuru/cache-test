@@ -7,6 +7,7 @@ import * as utils from "./utils/actionUtils";
 
 async function run(): Promise<void> {
     try {
+        core.info(JSON.stringify(process.env));
         // Validate inputs, this can cause task failure
         if (!utils.isValidEvent()) {
             utils.logWarning(
@@ -19,19 +20,13 @@ async function run(): Promise<void> {
             return;
         }
 
-        const cachePath = utils.resolvePath(
-            core.getInput(Inputs.Path, { required: true })
-        );
+        const cachePath = 'cache-path';
         core.debug(`Cache Path: ${cachePath}`);
 
-        const primaryKey = core.getInput(Inputs.Key, { required: true });
+        const primaryKey = 'cache-key';
         core.saveState(State.CacheKey, primaryKey);
 
-        const restoreKeys = core
-            .getInput(Inputs.RestoreKeys)
-            .split("\n")
-            .filter(x => x !== "");
-        const keys = [primaryKey, ...restoreKeys];
+        const keys = [primaryKey];
 
         core.debug("Resolved Keys:");
         core.debug(JSON.stringify(keys));
