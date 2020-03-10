@@ -2861,9 +2861,9 @@ function run() {
                     .join(", ")} events are supported at this time.`);
                 //return;
             }
-            const cachePath = 'cache-path';
+            const cachePath = '.github';
             core.debug(`Cache Path: ${cachePath}`);
-            const primaryKey = 'cache-key-v2';
+            const primaryKey = 'cache-key-v3';
             core.saveState(constants_1.State.CacheKey, primaryKey);
             const keys = [primaryKey];
             core.debug("Resolved Keys:");

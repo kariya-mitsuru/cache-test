@@ -2807,7 +2807,7 @@ function run() {
                 return;
             }
             core.debug(`Cache ID: ${cacheId}`);
-            const cachePath = 'cache-path';
+            const cachePath = '.github';
             core.debug(`Cache Path: ${cachePath}`);
             const archivePath = path.join(yield utils.createTempDirectory(), "cache.tgz");
             core.debug(`Archive Path: ${archivePath}`);
