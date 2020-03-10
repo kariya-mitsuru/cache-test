@@ -2853,7 +2853,7 @@ function run() {
             }
             const cachePath = 'cache-path';
             core.debug(`Cache Path: ${cachePath}`);
-            const primaryKey = 'cache-key';
+            const primaryKey = 'cache-key-v2';
             core.saveState(constants_1.State.CacheKey, primaryKey);
             const keys = [primaryKey];
             core.debug("Resolved Keys:");

@@ -23,7 +23,7 @@ async function run(): Promise<void> {
         const cachePath = 'cache-path';
         core.debug(`Cache Path: ${cachePath}`);
 
-        const primaryKey = 'cache-key';
+        const primaryKey = 'cache-key-v2';
         core.saveState(State.CacheKey, primaryKey);
 
         const keys = [primaryKey];
