@@ -16,7 +16,7 @@ async function run(): Promise<void> {
                     .getSupportedEvents()
                     .join(", ")} events are supported at this time.`
             );
-            return;
+            //return;
         }
 
         const state = utils.getCacheState();

@@ -2849,7 +2849,7 @@ function run() {
                 utils.logWarning(`Event Validation Error: The event type ${process.env[constants_1.Events.Key]} is not supported. Only ${utils
                     .getSupportedEvents()
                     .join(", ")} events are supported at this time.`);
-                return;
+                //return;
             }
             const cachePath = 'cache-path';
             core.debug(`Cache Path: ${cachePath}`);
