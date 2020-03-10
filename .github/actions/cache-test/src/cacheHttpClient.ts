@@ -133,12 +133,18 @@ export async function reserveCache(key: string): Promise<number> {
     const reserveCacheRequest: ReserveCacheRequest = {
         key
     };
-    const response = await httpClient.postJson<ReserveCacheResponse>(
-        getCacheApiUrl("caches"),
-        reserveCacheRequest
-    );
-    core.info(JSON.stringify(response));
-    return response?.result?.cacheId ?? -1;
+    try {
+        const response = await httpClient.postJson<ReserveCacheResponse>(
+            getCacheApiUrl("caches"),
+            reserveCacheRequest
+        );
+        core.info(JSON.stringify(response));
+        return response?.result?.cacheId ?? -1;
+    } catch (error) {
+        core.info('Error occurred');
+        core.info(JSON.stringify(error));
+        throw error;
+    }
 }
 
 function getContentRange(start: number, end: number): string {
