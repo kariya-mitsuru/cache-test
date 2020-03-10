@@ -86,6 +86,7 @@ export async function getCacheEntry(
     const response = await httpClient.getJson<ArtifactCacheEntry>(
         getCacheApiUrl(resource)
     );
+    core.debug(JSON.stringify(response));
     if (response.statusCode === 204) {
         return null;
     }

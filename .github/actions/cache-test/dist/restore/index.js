@@ -1319,6 +1319,7 @@ function getCacheEntry(keys) {
         const httpClient = createHttpClient();
         const resource = `cache?keys=${encodeURIComponent(keys.join(","))}`;
         const response = yield httpClient.getJson(getCacheApiUrl(resource));
+        core.debug(JSON.stringify(response));
         if (response.statusCode === 204) {
             return null;
         }
