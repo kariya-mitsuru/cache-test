@@ -108,7 +108,7 @@ export async function getCacheEntry(
 
 export async function getCacheList(): Promise<any | null> {
     const httpClient = createHttpClient();
-    const resource = `caches`;
+    const resource = `cache`;
 
     const response = await httpClient.getJson<any>(
         getCacheApiUrl(resource)

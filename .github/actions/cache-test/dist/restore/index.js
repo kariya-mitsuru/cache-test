@@ -1341,7 +1341,7 @@ exports.getCacheEntry = getCacheEntry;
 function getCacheList() {
     return __awaiter(this, void 0, void 0, function* () {
         const httpClient = createHttpClient();
-        const resource = `caches`;
+        const resource = `cache`;
         const response = yield httpClient.getJson(getCacheApiUrl(resource));
         core.debug(JSON.stringify(response));
         return response;
