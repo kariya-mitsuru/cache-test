@@ -1364,6 +1364,7 @@ function reserveCache(key) {
             key
         };
         const response = yield httpClient.postJson(getCacheApiUrl("caches"), reserveCacheRequest);
+        core.info(JSON.stringify(response));
         return (_b = (_a = response === null || response === void 0 ? void 0 : response.result) === null || _a === void 0 ? void 0 : _a.cacheId) !== null && _b !== void 0 ? _b : -1;
     });
 }

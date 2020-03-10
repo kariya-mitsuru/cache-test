@@ -138,7 +138,6 @@ export async function reserveCache(key: string): Promise<number> {
         reserveCacheRequest
     );
     core.info(JSON.stringify(response));
-    core.info(response);
     return response?.result?.cacheId ?? -1;
 }
 
